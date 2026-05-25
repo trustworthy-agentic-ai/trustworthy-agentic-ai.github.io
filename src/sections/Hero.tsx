@@ -120,8 +120,7 @@ export default function Hero() {
           className="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-8 leading-relaxed"
           style={{ color: "#A0B4C8" }}
         >
-          The 1st Workshop and Challenge on Long-Context Medical Claim
-          Verification and Risk-Aware PII Policy Compliance
+          The 1st Workshop on Trustworthy, Reliable, and Safe Agentic AI in Ubiquitous Computing
         </p>
 
         {/* Meta Info */}
