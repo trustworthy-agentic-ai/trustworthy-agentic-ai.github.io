@@ -156,8 +156,8 @@ function ExpandableSection({
     <div
       className="rounded-xl overflow-hidden"
       style={{
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.06)",
+        background: "rgba(255,255,255,0.07)",
+        border: "1px solid rgba(255,255,255,0.12)",
       }}
     >
       <button
@@ -169,7 +169,7 @@ function ExpandableSection({
           {title}
         </span>
         <ChevronDown
-          className={`w-4 h-4 text-[#6B8299] transition-transform duration-300 ${
+          className={`w-4 h-4 text-[#8BA3B8] transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -249,7 +249,7 @@ function TrackCard({ track }: { track: TrackData }) {
         </div>
 
         {/* Overview */}
-        <p className="text-sm text-[#6B8299] leading-relaxed">
+        <p className="text-sm text-[#8BA3B8] leading-relaxed">
           {track.overview}
         </p>
 
@@ -261,7 +261,7 @@ function TrackCard({ track }: { track: TrackData }) {
             color={track.color}
             defaultOpen={true}
           >
-            <p className="text-xs text-[#6B8299] mb-3">{track.task.intro}</p>
+            <p className="text-xs text-[#8BA3B8] mb-3">{track.task.intro}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {track.task.labels.map((l) => (
                 <div
@@ -277,7 +277,7 @@ function TrackCard({ track }: { track: TrackData }) {
                     <span className="text-xs font-semibold text-white block">
                       {l.label}
                     </span>
-                    <span className="text-[11px] text-[#6B8299]">{l.desc}</span>
+                    <span className="text-[11px] text-[#8BA3B8]">{l.desc}</span>
                   </div>
                 </div>
               ))}
@@ -341,7 +341,7 @@ function TrackCard({ track }: { track: TrackData }) {
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
                   <thead>
-                    <tr className="text-[#6B8299] border-b border-white/5">
+                    <tr className="text-[#8BA3B8] border-b border-white/5">
                       <th className="text-left py-2 px-1 font-medium">Band</th>
                       <th className="text-left py-2 px-1 font-medium">Score</th>
                       <th className="text-left py-2 px-1 font-medium">Weight</th>
@@ -362,7 +362,7 @@ function TrackCard({ track }: { track: TrackData }) {
                         </td>
                         <td className="py-2 px-1 text-[#A0B4C8]">{rb.score}</td>
                         <td className="py-2 px-1 text-[#A0B4C8]">{rb.weight}</td>
-                        <td className="py-2 px-1 text-[#6B8299]">{rb.treatment}</td>
+                        <td className="py-2 px-1 text-[#8BA3B8]">{rb.treatment}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -392,7 +392,7 @@ function TrackCard({ track }: { track: TrackData }) {
                     <span className="text-xs font-semibold text-white block">
                       {ev.metric}
                     </span>
-                    <span className="text-[11px] text-[#6B8299]">{ev.desc}</span>
+                    <span className="text-[11px] text-[#8BA3B8]">{ev.desc}</span>
                   </div>
                 </div>
               ))}
