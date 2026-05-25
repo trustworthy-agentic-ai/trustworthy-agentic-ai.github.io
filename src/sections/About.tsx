@@ -1,34 +1,22 @@
 import { useRef } from "react";
-import { Shield, Search, Target } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Activity, ShieldCheck } from "lucide-react";
 
 const cards = [
   {
-    icon: Shield,
-    title: "Robustness under Attack",
+    icon: Activity,
+    title: "MedLongTrust-EHR",
     description:
-      "Agents must remain safe under adaptive attacks such as prompt injection, unsafe tool manipulation, and cross-app exploits delivered through MCP connections.",
-    color: "#F59E0B",
-    bgGlow: "rgba(245, 158, 11, 0.1)",
+      "Evaluates whether models can faithfully understand complex, lengthy, cross-paragraph medical records to determine if a medical claim is supported by evidence, and identify hallucinations, contradictions, and critical risk omissions.",
+    color: "#2A9DB0",
+    bgGlow: "rgba(42, 157, 176, 0.1)",
   },
   {
-    icon: Search,
-    title: "Execution Safety",
+    icon: ShieldCheck,
+    title: "PII-PolicyBench",
     description:
-      "Safety depends on the whole interaction process—what the agent sees, which tools it uses, and when it should stop—not only the final output.",
-    color: "#1E7A8C",
-    bgGlow: "rgba(37, 99, 235, 0.1)",
-  },
-  {
-    icon: Target,
-    title: "Precision Alignment",
-    description:
-      "When a failure mode is known, current fixes can be too broad. We need repair methods that improve safety while keeping useful behavior intact.",
-    color: "#7C3AED",
-    bgGlow: "rgba(124, 58, 237, 0.1)",
+      "Evaluates whether PII detectors meet sample-level privacy policy compliance requirements, advancing evaluation from span-level F1 to risk-driven, sample-level policy compliance rate (PCR).",
+    color: "#7C6BB3",
+    bgGlow: "rgba(124, 107, 179, 0.1)",
   },
 ];
 
@@ -51,14 +39,14 @@ export default function About() {
             Workshop Scope
           </h2>
           <p className="text-lg text-[#A0B4C8] max-w-3xl mx-auto leading-relaxed">
-            Agent systems are being deployed in phones, wearables, and smart spaces. Because these systems can observe context and take actions, safety depends on the whole interaction process. We need to judge not only what an agent says, but also what it sees, which tools it uses, what actions it takes, and when it should stop or ask for help.
+            This workshop focuses on two critical challenges in trustworthy AI systems: long-context medical claim verification in electronic health records, and risk-aware PII detection for policy compliance. Both tracks push beyond traditional metrics toward deployment-oriented safety evaluation.
           </p>
         </div>
 
         {/* Cards Grid */}
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
         >
           {cards.map((card) => {
             const Icon = card.icon;

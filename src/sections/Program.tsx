@@ -81,7 +81,7 @@ const scheduleItems = [
   {
     time: "15:30–16:30",
     title: "Challenge Spotlight II",
-    description: "Track 3 winners and technical Q&A",
+    description: "Track 2 winners and technical Q&A",
     speaker: null,
     icon: MessageSquare,
     type: "spotlight" as const,
@@ -93,37 +93,6 @@ const scheduleItems = [
     speaker: null,
     icon: Award,
     type: "closing" as const,
-  },
-];
-
-const speakers = [
-  {
-    name: "Dr. Pan Zhou",
-    affil: "Singapore Management University (SMU)",
-    topic: "Efficient Agentic Reasoning",
-    track: "T1",
-    color: "#DC2626",
-  },
-  {
-    name: "Dr. Yaodong Yang",
-    affil: "Peking University (PKU)",
-    topic: "AI Alignment and Safe RL",
-    track: "T2",
-    color: "#059669",
-  },
-  {
-    name: "Prof. Alessio R. Lomuscio",
-    affil: "Imperial College London",
-    topic: "Safe AI Verification",
-    track: "T3",
-    color: "#7C3AED",
-  },
-  {
-    name: "Prof. Liping Jing",
-    affil: "Beijing Jiaotong University (BJTU)",
-    topic: "Robust & Interpretable Agent",
-    track: "Invited",
-    color: "#7C6BB3",
   },
 ];
 
@@ -244,49 +213,6 @@ export default function Program() {
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Invited Speakers */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Invited Speakers
-          </h3>
-          <p className="text-[#A0B4C8] text-sm text-center mb-10 max-w-xl mx-auto">
-            A balanced mix of verification, alignment, reasoning, and robust agent research.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {speakers.map((speaker) => (
-              <div
-                key={speaker.name}
-                className="rounded-xl p-5 text-center transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-lg font-bold"
-                  style={{
-                    background: `${speaker.color}25`,
-                    color: speaker.color,
-                    border: `1px solid ${speaker.color}50`,
-                  }}
-                >
-                  {speaker.track}
-                </div>
-                <h4 className="font-semibold text-sm mb-1" style={{ color: "#fff" }}>
-                  {speaker.name}
-                </h4>
-                <p className="text-xs mb-2" style={{ color: "#6B8299" }}>
-                  {speaker.affil}
-                </p>
-                <p className="text-xs font-medium" style={{ color: speaker.color }}>
-                  {speaker.topic}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
 

@@ -7,28 +7,28 @@ gsap.registerPlugin(ScrollTrigger);
 /* ──────────────── DATA ──────────────── */
 
 const organizers = [
-  { name: "赵健", nameEn: "Jian Zhao", affil: "TeleAI", img: "/trustworthy-agentic-ai/images/people-zhaojian.jpg" },
-  { name: "张天乐", nameEn: "Tianle Zhang", affil: "TeleAI", img: "/trustworthy-agentic-ai/images/people-tianlezhang.jpg" },
-  { name: "郭宏成", nameEn: "Hongcheng Guo", affil: "Fudan University", img: "/trustworthy-agentic-ai/images/people-hongchengguo.png" },
-  { name: "张磊磊", nameEn: "Leilei Zhang", affil: "TeleAI; Fudan University", img: "/trustworthy-agentic-ai/images/people-leileizhang.png" },
-  { name: "周晖林", nameEn: "Huilin Zhou", affil: "TeleAI; USTC", img: "/trustworthy-agentic-ai/images/people-huilinzhou.png" },
-  { name: "陈文弢", nameEn: "Wentao Chen", affil: "CAICT", img: "/trustworthy-agentic-ai/images/people-wentaochen.jpg" },
-  { name: "魏峰", nameEn: "Feng Wei", affil: "CAICT", img: "/trustworthy-agentic-ai/images/people-fengwei.jpg" },
-  { name: "陈杰", nameEn: "Jie Chen", affil: "CAICT", img: "/trustworthy-agentic-ai/images/people-jiechen.png" },
-  { name: "范肇心", nameEn: "Zhaoxin Fan", affil: "BUAA", img: "/trustworthy-agentic-ai/images/people-zhaoxinfan.png" },
-  { name: "张兰", nameEn: "Lan Zhang", affil: "USTC", img: "/trustworthy-agentic-ai/images/people-lanzhang.jpg" },
-  { name: "王志波", nameEn: "Zhibo Wang", affil: "Zhejiang University", img: "/trustworthy-agentic-ai/images/people-zhibowang.jpg" },
-  { name: "冯瑞", nameEn: "Rui Feng", affil: "Fudan University", img: "/trustworthy-agentic-ai/images/people-ruifeng.jpg" },
-  { name: "倪蓉蓉", nameEn: "Rongrong Ni", affil: "BJTU", img: "/trustworthy-agentic-ai/images/people-rongrongni.jpg" },
-  { name: "张洋豪", nameEn: "Yanghao Zhang", affil: "Imperial College London", img: "/trustworthy-agentic-ai/images/people-yanghaozhang.jpg" },
-  { name: "牟容慧", nameEn: "Ronghui Mu", affil: "University of Exeter", img: "/trustworthy-agentic-ai/images/people-ronghuimu.jpg" },
+  { name: "赵健", nameEn: "Jian Zhao", affil: "TeleAI", img: "/images/people-zhaojian.jpg" },
+  { name: "张天乐", nameEn: "Tianle Zhang", affil: "TeleAI", img: "/images/people-tianlezhang.jpg" },
+  { name: "郭宏成", nameEn: "Hongcheng Guo", affil: "Fudan University", img: "/images/people-hongchengguo.png" },
+  { name: "张磊磊", nameEn: "Leilei Zhang", affil: "TeleAI; Fudan University", img: "/images/people-leileizhang.png" },
+  { name: "周晖林", nameEn: "Huilin Zhou", affil: "TeleAI; USTC", img: "/images/people-huilinzhou.png" },
+  { name: "陈文弢", nameEn: "Wentao Chen", affil: "CAICT", img: "/images/people-wentaochen.jpg" },
+  { name: "魏峰", nameEn: "Feng Wei", affil: "CAICT", img: "/images/people-fengwei.jpg" },
+  { name: "陈杰", nameEn: "Jie Chen", affil: "CAICT", img: "/images/people-jiechen.png" },
+  { name: "范肇心", nameEn: "Zhaoxin Fan", affil: "BUAA", img: "/images/people-zhaoxinfan.png" },
+  { name: "张兰", nameEn: "Lan Zhang", affil: "USTC", img: "/images/people-lanzhang.jpg" },
+  { name: "王志波", nameEn: "Zhibo Wang", affil: "Zhejiang University", img: "/images/people-zhibowang.jpg" },
+  { name: "冯瑞", nameEn: "Rui Feng", affil: "Fudan University", img: "/images/people-ruifeng.jpg" },
+  { name: "倪蓉蓉", nameEn: "Rongrong Ni", affil: "BJTU", img: "/images/people-rongrongni.jpg" },
+  { name: "张洋豪", nameEn: "Yanghao Zhang", affil: "Imperial College London", img: "/images/people-yanghaozhang.jpg" },
+  { name: "牟容慧", nameEn: "Ronghui Mu", affil: "University of Exeter", img: "/images/people-ronghuimu.jpg" },
 ];
 
 const advisoryCommittee = [
-  { name: "兴军亮", nameEn: "Junliang Xing", affil: "Tsinghua University", img: "/trustworthy-agentic-ai/images/people-junliangxing.jpg" },
-  { name: "Jane Shen Shengmei", nameEn: "Jane Shen", affil: "Pensees Singapore", img: "/trustworthy-agentic-ai/images/people-janeshen.png" },
-  { name: "颜水成", nameEn: "Shuicheng Yan", affil: "NUS", img: "/trustworthy-agentic-ai/images/people-shuichengyan.png" },
-  { name: "李学龙", nameEn: "Xuelong Li", affil: "TeleAI", img: "/trustworthy-agentic-ai/images/people-xuelongli.jpg" },
+  { name: "兴军亮", nameEn: "Junliang Xing", affil: "Tsinghua University", img: "/images/people-junliangxing.jpg" },
+  { name: "Jane Shen Shengmei", nameEn: "Jane Shen", affil: "Pensees Singapore", img: "/images/people-janeshen.png" },
+  { name: "颜水成", nameEn: "Shuicheng Yan", affil: "NUS", img: "/images/people-shuichengyan.png" },
+  { name: "李学龙", nameEn: "Xuelong Li", affil: "TeleAI", img: "/images/people-xuelongli.jpg" },
 ];
 
 /* ──────────────── CARD COMPONENT ──────────────── */

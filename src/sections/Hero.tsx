@@ -64,7 +64,7 @@ export default function Hero() {
       {/* Shanghai Skyline Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url(/trustworthy-agentic-ai/images/shanghai-skyline.png)" }}
+        style={{ backgroundImage: "url(/images/shanghai-skyline.png)" }}
       />
 
       {/* Gradient overlays */}
@@ -120,8 +120,8 @@ export default function Hero() {
           className="text-xl md:text-2xl font-light max-w-3xl mx-auto mb-8 leading-relaxed"
           style={{ color: "#A0B4C8" }}
         >
-          The 1st Workshop and Challenge on Dynamic Evaluation, Execution Safety,
-          and Precision Alignment
+          The 1st Workshop and Challenge on Long-Context Medical Claim
+          Verification and Risk-Aware PII Policy Compliance
         </p>
 
         {/* Meta Info */}

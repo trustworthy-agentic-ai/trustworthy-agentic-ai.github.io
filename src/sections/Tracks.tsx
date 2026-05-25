@@ -55,7 +55,7 @@ const track1: TrackData = {
   subtitle: "Electronic Health Record Long-Context Hallucination Detection & Evidence Attribution",
   color: "#2A9DB0",
   colorDark: "#1E7A8C",
-  image: "/trustworthy-agentic-ai/images/track1-medical.jpg",
+  image: "/images/track1-medical.jpg",
   icon: Activity,
   overview:
     "MedLongTrust-EHR evaluates whether models can faithfully understand complex, lengthy, cross-paragraph medical records to determine if a medical claim is supported by evidence, and identify hallucinations, contradictions, insufficient evidence, and critical risk omissions.",
@@ -98,7 +98,7 @@ const track2: TrackData = {
   subtitle: "Risk-Aware Benchmarking for Policy-Compliant PII Detection",
   color: "#7C6BB3",
   colorDark: "#5B4B8A",
-  image: "/trustworthy-agentic-ai/images/track2-privacy.jpg",
+  image: "/images/track2-privacy.jpg",
   icon: ShieldCheck,
   overview:
     "PII-PolicyBench evaluates whether PII detectors meet sample-level privacy policy compliance requirements. It advances evaluation from span-level F1 to risk-driven, sample-level policy compliance rate (PCR).",
