@@ -11,17 +11,17 @@ const dates = [
     highlight: false,
   },
   {
-    date: "June 25, 2026",
+    date: "June 30, 2026",
     event: "Paper & Challenge Submission",
     highlight: true,
   },
   {
-    date: "July 20, 2026",
+    date: "July 21, 2026",
     event: "Notification of Acceptance",
     highlight: false,
   },
   {
-    date: "July 31, 2026",
+    date: "August 04, 2026",
     event: "Camera-Ready Due",
     highlight: false,
   },

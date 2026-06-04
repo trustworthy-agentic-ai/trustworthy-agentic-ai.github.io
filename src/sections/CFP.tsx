@@ -95,14 +95,14 @@ export default function CFP() {
             <p className="text-[#6B8299] text-sm">
               Ready to contribute? Submit through the official system.
             </p>
-            <button
-              onClick={() =>
-                alert("Submission system link will be available soon.")
-              }
+            <a
+              href="https://new.precisionconference.com/sigchi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-[#1E7A8C] text-white font-semibold text-sm hover:bg-[#2A9DB0] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E7A8C]/25 hover:-translate-y-0.5"
             >
-              Submission System (CMT)
-            </button>
+              Submission System (PCS) →
+            </a>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    const deadline = new Date("2026-06-26T12:00:00Z").getTime();
+    const deadline = new Date("2026-07-01T12:00:00Z").getTime();
     const update = () => {
       const now = Date.now();
       const diff = deadline - now;
@@ -150,7 +150,7 @@ export default function Hero() {
           <CountdownUnit value={timeLeft.seconds} label="Seconds" />
         </div>
         <p className="text-xs mb-10" style={{ color: "#6B8299" }}>
-          Until submission deadline (June 25, 2026 AoE)
+          Until submission deadline (June 30, 2026 AoE)
         </p>
 
         {/* CTA Buttons */}
