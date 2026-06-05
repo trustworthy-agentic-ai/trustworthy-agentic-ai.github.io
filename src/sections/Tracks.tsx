@@ -42,6 +42,8 @@ interface TrackData {
     labels: TaskLabel[];
   };
   dataset?: string[];
+  datasetLinks?: { label: string; url: string }[];
+  submission?: string[];
   questionTypes?: string[];
   riskBands?: RiskBand[];
   evaluation: EvalMetric[];
@@ -58,7 +60,7 @@ const track1: TrackData = {
   image: "/images/track1-medical.jpg",
   icon: Activity,
   overview:
-    "MedLongTrust-EHR is a challenge for long-context trustworthy understanding of electronic health records. Models must judge whether a medical claim or response is trustworthy, identify hallucinations, privacy leaks, safety risks, and insufficient evidence, and return traceable evidence paragraphs. The current public release is based on Synthea / SyntheticMass synthetic EHR data, suitable for public evaluation and baseline development; it can be extended to authorized real clinical data.",
+    "MedLongTrust-EHR is a challenge for long-context trustworthy understanding of electronic health records. Models must judge whether a medical claim or response is trustworthy, identify hallucinations, privacy leaks, safety risks, and insufficient evidence, and return traceable evidence paragraphs. Participants download the public train/dev/test package, develop local systems, and submit a JSON prediction file named submission.json to the challenge platform.",
   task: {
     intro: "Given a patient-level long EHR timeline and a medical claim or model response, the system must output: (1) whether the claim or response is trustworthy; (2) what risk types are present; (3) which evidence paragraphs support the judgment. The model must not only judge right or wrong, but also explain error types, identify privacy leaks and safety risks, and understand cross-encounter patient timelines.",
     labels: [
@@ -73,6 +75,7 @@ const track1: TrackData = {
     ],
   },
   dataset: [
+    "Dataset download: /datasets/MedLongTrust-EHR_Synthea_Public_Release.zip",
     "120 synthetic patient timeline records (Synthea / SyntheticMass)",
     "1,000 trustworthiness judgment questions",
     "Up to 20 encounters per record",
@@ -80,6 +83,21 @@ const track1: TrackData = {
     "Train: 84 records / 690 questions (with answers)",
     "Dev: 18 records / 152 questions (with answers)",
     "Test: 18 records / 158 questions (answers held out)",
+  ],
+  datasetLinks: [
+    {
+      label: "Download public Track 1 dataset",
+      url: "/datasets/MedLongTrust-EHR_Synthea_Public_Release.zip",
+    },
+  ],
+  submission: [
+    "Submission file name: submission.json",
+    "Each prediction is keyed by qid, which is the unique claim/question ID.",
+    "Required fields per qid: trust_label, risk_types, evidence.",
+    "trust_label values: trusted, untrusted, insufficient_evidence.",
+    "risk_types is a list and may include hallucination.fact_mismatch, hallucination.fabricated_medication, hallucination.trend_reversal, privacy.identifier_disclosure, safety.allergy_conflict, insufficient_evidence.",
+    "evidence is a list of objects such as { paragraph_id: \"encounter_003_p002\" }.",
+    "summary.total_tokens may be included for Token Cost evaluation.",
   ],
   questionTypes: [
     "Condition verification — judge if diagnosis claim is supported by EHR",
@@ -296,6 +314,23 @@ function TrackCard({ track }: { track: TrackData }) {
               icon={Database}
               color={track.color}
             >
+              {track.datasetLinks && track.datasetLinks.length > 0 && (
+                <div className="mb-3 flex flex-wrap gap-2">
+                  {track.datasetLinks.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      className="inline-flex items-center rounded-lg px-3 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-80"
+                      style={{
+                        background: `${track.color}25`,
+                        border: `1px solid ${track.color}45`,
+                      }}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
               <ul className="space-y-2">
                 {track.dataset.map((item) => (
                   <li
@@ -310,6 +345,48 @@ function TrackCard({ track }: { track: TrackData }) {
                   </li>
                 ))}
               </ul>
+            </ExpandableSection>
+          )}
+
+          {track.submission && track.submission.length > 0 && (
+            <ExpandableSection
+              title="Submission Format"
+              icon={FileText}
+              color={track.color}
+            >
+              <ul className="space-y-2">
+                {track.submission.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-xs text-[#A0B4C8]"
+                  >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0"
+                      style={{ background: track.color }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <pre
+                className="mt-3 overflow-x-auto rounded-lg p-3 text-[11px] text-[#A0B4C8]"
+                style={{ background: "rgba(0,0,0,0.22)" }}
+              >{`{
+  "summary": {
+    "total_tokens": {
+      "prompt_tokens": 12000,
+      "completion_tokens": 3000,
+      "total_tokens": 15000
+    }
+  },
+  "synthea_pub_00001": {
+    "trust_label": "trusted",
+    "risk_types": [],
+    "evidence": [
+      { "paragraph_id": "encounter_003_p002" }
+    ]
+  }
+}`}</pre>
             </ExpandableSection>
           )}
 
