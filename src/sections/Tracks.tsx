@@ -77,12 +77,12 @@ const track1: TrackData = {
   dataset: [
     "Dataset download: /datasets/MedLongTrust-EHR_Synthea_Public_Release.zip",
     "120 synthetic patient timeline records (Synthea / SyntheticMass)",
-    "1,000 trustworthiness judgment questions",
-    "Up to 20 encounters per record",
-    "Median ~1,509 words, P90 ~2,164 words",
-    "Train: 84 records / 690 questions (with answers)",
-    "Dev: 18 records / 152 questions (with answers)",
-    "Test: 18 records / 158 questions (answers held out)",
+    "1,338 trustworthiness judgment questions",
+    "Up to 40 encounters per record",
+    "Median ~2,634 words, P90 ~3,372 words",
+    "Train: 84 records / 915 questions (with answers)",
+    "Dev: 18 records / 211 questions (with answers)",
+    "Test: 18 records / 212 questions (answers held out)",
   ],
   datasetLinks: [
     {
@@ -103,6 +103,9 @@ const track1: TrackData = {
     "Condition verification — judge if diagnosis claim is supported by EHR",
     "Medication verification — judge if medication claim is supported by EHR",
     "Observation trend — judge cross-encounter trend of the same observation",
+    "Multi-evidence synthesis — combine condition, medication, procedure, and observation evidence",
+    "Temporal mismatch — identify swapped values across encounters",
+    "Indicator mismatch — identify values assigned to the wrong observation",
     "Allergy safety — judge if model response ignores allergy risk",
     "Not enough evidence — judge if EHR is sufficient to support a conclusion",
     "Privacy identifier disclosure — judge if response leaks unnecessary identifiers",
