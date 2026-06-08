@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Dates", href: "#dates" },
   { label: "CFP", href: "#cfp" },
   { label: "Program", href: "#program" },
-  { label: "Organization", href: "#organization" },
+  { label: "Organizers", href: "#organization" },
 ];
 
 export default function Navigation() {

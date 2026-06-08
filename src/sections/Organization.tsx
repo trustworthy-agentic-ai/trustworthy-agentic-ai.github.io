@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 
 const advisoryCommittee = [
   { name: "Xuelong Li", affil: "TeleAI", img: "/images/people-xuelongli.jpg" },
-  { name: "Shuicheng Yan", affil: "NUS", img: "/images/people-shuichengyan.png" },
+  { name: "Shuicheng Yan", affil: "National University of Singapore", img: "/images/people-shuichengyan.png" },
   { name: "Junliang Xing", affil: "Tsinghua University", img: "/images/people-junliangxing.jpg" },
 ];
 
@@ -15,18 +15,18 @@ const organizers = [
   { name: "Tianle Zhang", affil: "TeleAI", img: "/images/people-tianlezhang.jpg" },
   { name: "Hongcheng Guo", affil: "Fudan University", img: "/images/people-hongchengguo.png" },
   { name: "Leilei Zhang", affil: "TeleAI; Fudan University", img: "/images/people-leileizhang.png" },
-  { name: "Huilin Zhou", affil: "TeleAI; USTC", img: "/images/people-huilinzhou.png" },
-  { name: "Feng Wei", affil: "CAICT", img: "/images/people-fengwei.jpg" },
+  { name: "Huilin Zhou", affil: "TeleAI; University of Science and Technology of China", img: "/images/people-huilinzhou.png" },
+  { name: "Feng Wei", affil: "China Academy of Information and Communications Technology", img: "/images/people-fengwei.jpg" },
   { name: "Kai Wang", affil: "TeleAI", img: "/images/people-kaiwang.jpg" },
   { name: "Yuchen Yuan", affil: "TeleAI", img: "/images/people-yuchenyuan.jpg" },
   { name: "Yanghao Zhang", affil: "Imperial College London", img: "/images/people-yanghaozhang.jpg" },
   { name: "Ronghui Mu", affil: "University of Exeter", img: "/images/people-ronghuimu.jpg" },
-  { name: "Guojun Xiong", affil: "SJTU", img: "/images/people-guojunxiong.png" },
+  { name: "Guojun Xiong", affil: "Shanghai Jiao Tong University", img: "/images/people-guojunxiong.png" },
   { name: "Zheng Zhu", affil: "GigaAI", img: "/images/people-zhengzhu.jpg" },
-  { name: "Wentao Chen", affil: "CAICT", img: "/images/people-wentaochen.jpg" },
-  { name: "Rongrong Ni", affil: "BJTU", img: "/images/people-rongrongni.jpg" },
-  { name: "Lan Zhang", affil: "USTC", img: "/images/people-lanzhang.jpg" },
-  { name: "Zhaofeng He", affil: "BUPT", img: "/images/people-zhaofenghe.png" },
+  { name: "Wentao Chen", affil: "China Academy of Information and Communications Technology", img: "/images/people-wentaochen.jpg" },
+  { name: "Rongrong Ni", affil: "Beijing Jiaotong University", img: "/images/people-rongrongni.jpg" },
+  { name: "Lan Zhang", affil: "University of Science and Technology of China", img: "/images/people-lanzhang.jpg" },
+  { name: "Zhaofeng He", affil: "Beijing University of Posts and Telecommunications", img: "/images/people-zhaofenghe.png" },
   { name: "Rui Feng", affil: "Fudan University", img: "/images/people-ruifeng.jpg" },
   { name: "Zhibo Wang", affil: "Zhejiang University", img: "/images/people-zhibowang.jpg" },
 ];
@@ -85,7 +85,7 @@ function PersonCard({ person }: { person: { name: string; affil: string; img: st
           {person.name}
         </p>
         {person.affil && (
-          <p className="text-[#8BA3B8] text-xs leading-tight">{person.affil}</p>
+          <p className="text-[#8BA3B8] text-[11px] leading-tight break-words">{person.affil}</p>
         )}
       </div>
     </div>
@@ -153,7 +153,7 @@ export default function Organization() {
             Organizers
           </h3>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {organizers.map((p) => (
               <PersonCard key={p.name} person={p} />
             ))}
