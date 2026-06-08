@@ -5,7 +5,6 @@ import { useRef, useEffect } from "react";
 const advisoryCommittee = [
   { name: "Xuelong Li", affil: "TeleAI", img: "/images/people-xuelongli.jpg" },
   { name: "Shuicheng Yan", affil: "NUS", img: "/images/people-shuichengyan.png" },
-  { name: "Zhen Wang", affil: "Wuhan University", img: "/images/people-zhenwang.png" },
   { name: "Junliang Xing", affil: "Tsinghua University", img: "/images/people-junliangxing.jpg" },
 ];
 
@@ -60,7 +59,7 @@ function PersonCard({ person }: { person: { name: string; affil: string; img: st
             src={person.img}
             alt={person.name}
             className="w-20 h-24 rounded-xl object-cover absolute inset-0"
-            style={{ border: "2px solid rgba(42, 157, 176, 0.35)" }}
+            style={{ border: "2px solid rgba(42, 157, 176, 0.35)", objectPosition: "top center" }}
             onError={(e) => {
               e.currentTarget.style.display = "none";
               const fb = e.currentTarget.parentElement?.querySelector(".fb") as HTMLElement;
