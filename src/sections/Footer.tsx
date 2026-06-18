@@ -6,8 +6,7 @@ const quickLinks = [
     href: "https://www.ubicomp.org/ubicomp-iswc-2026",
     external: true,
   },
-  { label: "ACM Digital Library", href: "#", external: false },
-  { label: "Submission System (CMT)", href: "#", external: false },
+  { label: "Submission System (PCS)", href: "https://new.precisionconference.com/sigchi", external: true },
 ];
 
 const contactLinks = [
@@ -35,8 +34,8 @@ export default function Footer() {
               <span className="text-[#1E7A8C]">2026</span>
             </h3>
             <p className="text-[#6B8299] text-sm leading-relaxed max-w-sm">
-              The 1st Workshop and Challenge on Dynamic Evaluation, Execution
-              Safety, and Precision Alignment. Affiliated with UbiComp / ISWC
+              The 1st Workshop on Trustworthy, Controllable, and Sustainable
+              Agentic AI in Ubiquitous Computing. Affiliated with UbiComp / ISWC
               2026.
             </p>
           </div>

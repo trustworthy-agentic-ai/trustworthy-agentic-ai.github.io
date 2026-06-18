@@ -4,16 +4,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const dates = [
+interface DateItem {
+  date: string;
+  event: string;
+  highlight: boolean;
+  updated?: boolean;
+  oldDate?: string;
+}
+
+const dates: DateItem[] = [
   {
     date: "May 5, 2026",
     event: "Website & CFP Release",
     highlight: false,
   },
   {
-    date: "June 30, 2026",
+    date: "July 14, 2026",
+    oldDate: "June 30, 2026",
     event: "Paper & Challenge Submission",
     highlight: true,
+    updated: true,
   },
   {
     date: "July 21, 2026",
@@ -150,12 +160,19 @@ export default function Dates() {
                       }`}
                     >
                       <div className="flex items-center justify-between flex-wrap gap-2">
-                        <span
-                          className={`font-mono font-bold text-base ${
-                            item.highlight ? "text-[#1E7A8C]" : "text-[#B8C8D8]"
-                          }`}
-                        >
-                          {item.date}
+                        <span className="flex items-center gap-2 flex-wrap">
+                          {item.oldDate && (
+                            <span className="font-mono font-bold text-base text-[#4A6278] line-through decoration-[#C0392B] decoration-2">
+                              {item.oldDate}
+                            </span>
+                          )}
+                          <span
+                            className={`font-mono font-bold text-base ${
+                              item.highlight ? "text-[#1E7A8C]" : "text-[#B8C8D8]"
+                            }`}
+                          >
+                            {item.date}
+                          </span>
                         </span>
                         {item.highlight && (
                           <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#1E7A8C]/20 text-[#1E7A8C]">
