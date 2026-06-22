@@ -31,7 +31,7 @@ const dates: DateItem[] = [
     highlight: false,
   },
   {
-    date: "August 04, 2026",
+    date: "July 31, 2026",
     event: "Camera-Ready Due",
     highlight: false,
   },
